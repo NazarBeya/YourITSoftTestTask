@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  db:
+    image: postgis/postgis
+    ports:
+      - '6432:5432'
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_task
+    volumes:
+      - test_task-db:/var/lib/postgresql/test
+
+volumes:
+  test_task-db:
+  
